@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainColor: #131e30;
+  --secondColor: #3b3ec1;
+}
+
+.bgMain {
+  background-color: var(--mainColor) !important;
+}
+
+/* Form.................... */
+
+label {
+  font-size: 1.2rem;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 1rem !important;
+}
+::placeholder {
+  font-weight: bold;
+}
+
+/* Table.................... */
+
+thead th,
+tr td {
+  padding: 1.5rem !important;
+  text-align: center;
+}

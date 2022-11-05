@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/inventory-management.png" />
+  <title>Product Management System</title>
+</head>
+
+<body>
+  <!-- Start of the project................................ -->
+  <section id="home">
+    <header>
+      <!-- Navbar................................ -->
+      <nav class="navbar navbar-expand-lg bg-black py-3 bgMain position-fixed top-0 end-0 start-0">
+        <div class="container">
+          <a class="navbar-brand text-white text-capitalize fw-bold fs-3" href="#">product management system</a>
+        </div>
+      </nav>
+    </header>
+  </section>
+
+  <section class="bg-dark py-5 overflow-auto">
+    <div class="container">
+      <!-- Form................................ -->
+      <div class="container px-5 pt-5 mt-5">
+        <div class="mb-4">
+          <label for="exampleFormControlInput1" class="form-label">product name :</label>
+          <input type="text" oninput="validateNameInput()" class="form-control" id="productNameInput"
+            placeholder="Name">
+          <div class="d-none text-danger fw-light my-2" id="nameInputError">
+            Please enter a valid name with an uppercase letter at the beginning of the name.
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="exampleFormControlInput1" class="form-label">product price :</label>
+          <input type="text" oninput="validatePriceInput()" class="form-control" id="productPriceInput"
+            placeholder="Price">
+          <div class="d-none text-danger fw-light my-2" id="priceInputError">
+            Please enter a valid price between 1000$ and 10000$
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="exampleFormControlInput1" class="form-label">product category :</label>
+          <input type="text" oninput="validateCategoryInput()" class="form-control" id="productCategoryInput"
+            placeholder="Category">
+          <div class="d-none text-danger fw-light my-2" id="categoryInputError">
+            Please enter a valid type (mobile, tv, or device)
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label for="exampleFormControlTextarea1" class="form-label">product description :</label>
+          <textarea class="form-control" oninput="validateDescriptionInput()" id="productDescriptionInput" rows="3"
+            placeholder="Description"></textarea>
+          <div class="d-none text-danger fw-light my-2" id="descriptionInputError">
+            Write a description from 3-30 letter
+          </div>
+        </div>
+        <button onclick="addProduct()" id="addBtn" class="btn btn-outline-info"><i class="fa-solid fa-circle-plus"></i>
+          Add
+          Product</button>
+        <button onclick="updateProduct()" id="updateBtn" class="btn btn-outline-primary d-none"><i
+            class="fa-solid fa-pen"></i>
+          Update</button>
+      </div>
+      <!-- Tabel................................ -->
+
+      <div class="container pt-5 mt-3 ">
+        <form role="search">
+          <input class="form-control me-2 rounded-5 fw-bolder fs-5" oninput="searchForProduct(this.value)" type="search"
+            placeholder="Search By Name" aria-label="Search">
+        </form>
+        <table class="table mt-5 bgMain text-white rounded-3 ">
+          <thead>
+            <th>index</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Category</th>
+            <th>Product Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </thead>
+          <tbody id="tableBody">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/Main.js"></script>
+</body>
+
+</html>
